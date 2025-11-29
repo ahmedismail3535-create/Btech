@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.9.6 on darwin)" generated="2025-11-29T02:56:49.391664" rpa="false" schemaversion="5">
+<suite id="s1" name="Btech-automation-main" source="/Users/oie/Downloads/Btech-automation-main">
+<suite id="s1-s1" name="Tests" source="/Users/oie/Downloads/Btech-automation-main/tests">
+<suite id="s1-s1-s1" name="Test" source="/Users/oie/Downloads/Btech-automation-main/tests/test">
+<suite id="s1-s1-s1-s1" name="Test Add To Cart" source="/Users/oie/Downloads/Btech-automation-main/tests/test/test_add_to_cart.robot">
+<test id="s1-s1-s1-s1-t1" name="Add Product To Cart" line="10">
+<kw name="Open BTech Home Page" owner="home_page" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-11-29T02:56:49.618048" level="INFO">Opening browser 'chrome' to base url 'https://btech.com/en'.</msg>
+<arg>${BTECH_URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-11-29T02:56:49.617826" elapsed="4.157398"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-11-29T02:56:53.781766" elapsed="1.625463"/>
+</kw>
+<status status="PASS" start="2025-11-29T02:56:49.617188" elapsed="5.790227"/>
+</kw>
+<kw name="Search For Product" owner="home_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SEARCH_INPUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-29T02:56:55.408109" elapsed="0.224690"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-29T02:56:55.633355" level="INFO">Typing text 'iphone16' into text field '(//input[@placeholder='What are you looking for?'])[1]'.</msg>
+<arg>${SEARCH_INPUT}</arg>
+<arg>${PRODUCT}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-29T02:56:55.633020" elapsed="0.212905"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-11-29T02:56:55.847200" level="INFO">Sending key(s) ('ENTER',) to (//input[@placeholder='What are you looking for?'])[1] element.</msg>
+<msg time="2025-11-29T02:56:56.177665" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2025-11-29T02:56:56.177906" level="INFO">Releasing special key ENTER.</msg>
+<arg>${SEARCH_INPUT}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-11-29T02:56:55.846621" elapsed="0.339062"/>
+</kw>
+<arg>iphone16</arg>
+<status status="PASS" start="2025-11-29T02:56:55.407742" elapsed="0.778114"/>
+</kw>
+<kw name="Select First Product" owner="search_results_page">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Location Should Contain" owner="SeleniumLibrary">
+<msg time="2025-11-29T02:56:56.686475" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-74.png"&gt;&lt;img src="selenium-screenshot-74.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-11-29T02:56:56.686746" level="FAIL">Location should have contained 'iphone16' but it was 'https://btech.com/en'.</msg>
+<arg>iphone16</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<status status="FAIL" start="2025-11-29T02:56:56.186638" elapsed="0.508819">Location should have contained 'iphone16' but it was 'https://btech.com/en'.</status>
+</kw>
+<kw name="Location Should Contain" owner="SeleniumLibrary">
+<msg time="2025-11-29T02:56:57.203088" level="INFO">Current location contains 'iphone16'.</msg>
+<arg>iphone16</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<status status="PASS" start="2025-11-29T02:56:57.197679" elapsed="0.005688"/>
+</kw>
+<arg>20s</arg>
+<arg>500ms</arg>
+<arg>Location Should Contain</arg>
+<arg>iphone16</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-11-29T02:56:56.186400" elapsed="1.017233"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-29T02:56:57.204557" level="INFO">Clicking element '(//article[contains(@class,'bg-absoluteLight')])[1]//a[@href]'.</msg>
+<arg>${FIRST_PRODUCT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-29T02:56:57.203940" elapsed="0.084833"/>
+</kw>
+<status status="PASS" start="2025-11-29T02:56:56.186071" elapsed="1.103042"/>
+</kw>
+<kw name="Verify First Product Has Image" owner="search_results_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${PRODUCT_IMAGE}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-29T02:56:57.290308" elapsed="0.912457"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-11-29T02:56:58.214434" level="INFO">Element '(//img[@alt='product image'])[3]' is displayed.</msg>
+<arg>${PRODUCT_IMAGE}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-29T02:56:58.203108" elapsed="0.011544"/>
+</kw>
+<status status="PASS" start="2025-11-29T02:56:57.289812" elapsed="0.925046"/>
+</kw>
+<kw name="Add Product To Cart" owner="product_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ADD_TO_CART_BTN}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-29T02:56:58.215854" elapsed="0.014325"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-29T02:56:58.230721" level="INFO">Clicking element '//div[@class='sticky w-full top-36']//button[normalize-space()='Add to cart']'.</msg>
+<arg>${ADD_TO_CART_BTN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-29T02:56:58.230409" elapsed="0.056986"/>
+</kw>
+<status status="PASS" start="2025-11-29T02:56:58.215312" elapsed="0.072276"/>
+</kw>
+<kw name="Go To Cart" owner="cart_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${badge_locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-29T02:56:58.288072" elapsed="1.100332"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-29T02:56:59.389583" level="INFO">Clicking element '//img[@alt='cart']'.</msg>
+<arg>${CART}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-29T02:56:59.388847" elapsed="0.054287"/>
+</kw>
+<status status="PASS" start="2025-11-29T02:56:58.287794" elapsed="1.155531"/>
+</kw>
+<kw name="Validate Cart Has Items" owner="cart_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CART_ITEM}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-29T02:56:59.443887" elapsed="0.689554"/>
+</kw>
+<status status="PASS" start="2025-11-29T02:56:59.443559" elapsed="0.690206"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-11-29T02:57:00.134313" elapsed="0.180995"/>
+</kw>
+<status status="PASS" start="2025-11-29T02:56:49.614995" elapsed="10.700619"/>
+</test>
+<status status="PASS" start="2025-11-29T02:56:49.419070" elapsed="10.900023"/>
+</suite>
+<status status="PASS" start="2025-11-29T02:56:49.417473" elapsed="10.903929"/>
+</suite>
+<status status="PASS" start="2025-11-29T02:56:49.415648" elapsed="10.907796"/>
+</suite>
+<status status="PASS" start="2025-11-29T02:56:49.395166" elapsed="10.930058"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Btech-automation-main" id="s1" pass="1" fail="0" skip="0">Btech-automation-main</stat>
+<stat name="Tests" id="s1-s1" pass="1" fail="0" skip="0">Btech-automation-main.Tests</stat>
+<stat name="Test" id="s1-s1-s1" pass="1" fail="0" skip="0">Btech-automation-main.Tests.Test</stat>
+<stat name="Test Add To Cart" id="s1-s1-s1-s1" pass="1" fail="0" skip="0">Btech-automation-main.Tests.Test.Test Add To Cart</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-11-29T02:56:49.597054" level="ERROR">Error in file '/Users/oie/Downloads/Btech-automation-main/pages/home_page.robot' on line 3: Resource file '../resources/locators.robot' does not exist.</msg>
+<msg time="2025-11-29T02:56:49.601979" level="ERROR">Error in file '/Users/oie/Downloads/Btech-automation-main/pages/search_results_page.robot' on line 3: Resource file '../resources/locators.robot' does not exist.</msg>
+<msg time="2025-11-29T02:56:49.605708" level="ERROR">Error in file '/Users/oie/Downloads/Btech-automation-main/pages/product_page.robot' on line 3: Resource file '../resources/locators.robot' does not exist.</msg>
+<msg time="2025-11-29T02:56:49.609863" level="ERROR">Error in file '/Users/oie/Downloads/Btech-automation-main/pages/cart_page.robot' on line 3: Resource file '../resources/locators.robot' does not exist.</msg>
+</errors>
+</robot>
